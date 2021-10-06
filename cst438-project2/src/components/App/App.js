@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
-import Login from './Login';
-import './App.css';
+import Login from '../Login/Login';
+import '../css/App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Dashboard from './Dashboard';
-import Preferences from './Preferences';
+import Dashboard from '../Dashboard/Dashboard';
+import Preferences from '../Preferences/Preferences';
 
 function App() {
   const [token, setToken] = useState();
