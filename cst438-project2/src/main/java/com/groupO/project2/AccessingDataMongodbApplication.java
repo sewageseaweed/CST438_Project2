@@ -1,5 +1,8 @@
 package com.groupO.project2;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -33,7 +36,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
     System.out.println();
 
-    System.out.println("Users found with finalALL()");
+    System.out.println("Users found with findByEmail(ewe@gmail.com)");
     System.out.println("------------");
     System.out.println(repository.findByEmail("ewe@gmail.com"));
 
