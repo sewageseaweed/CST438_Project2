@@ -22,7 +22,7 @@ public class User {
   public String toString(){
     return String.format(
       "User[id=%s, username=%s, email=%s]",
-      id, firstName, lastName);
+      id, username, email);
   }
 
 }
