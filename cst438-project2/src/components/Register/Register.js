@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch, Redirect, useHistory, Link } from 'react-
 import PropTypes from 'prop-types';
 import '../css/Register.css';
 
-// async function loginUser(credentials) {
-//     return fetch('http://localhost:8080/login', {
+// async function registerUser(credentials) {
+//     return fetch('http://localhost:8080/register', {
 //       method: 'POST',
 //       headers: {
 //         'Content-Type': 'application/json'
@@ -14,8 +14,7 @@ import '../css/Register.css';
 //       .then(data => data.json())
 // }
 
-// export default function Login({ setToken }) {
-export default function Register({ setToken }) {
+export default function Register() {
 
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
@@ -35,16 +34,15 @@ export default function Register({ setToken }) {
       username: 'admin',
       password: 'admin'
     }
-    if ((username === hardcodedCred.username) && (password === hardcodedCred.password)) {
-      //combination is good. Log them in.
-      //this token can be anything. You can use random.org to generate a random string;
-      const token = '123456abcdef';
-      setToken(token);
+    if ((username === hardcodedCred.username) && (password === hardcodedCred.password) && (password === reenterpassword)) {
+      //combination is good. Register them.
+
     } else {
       //bad combination
       alert('wrong email or password combination');
     }
   }
+
   return(
     <div className="register-wrapper">
       <form onSubmit={handleSubmit} className="card mx-auto w-50 p-3 m-3">
@@ -62,9 +60,6 @@ export default function Register({ setToken }) {
           <button type="submit" className="btn btn-primary">Register</button>
         </div>
       </form>
-      <div>
-      
-      </div>
     </div>
   )
 }

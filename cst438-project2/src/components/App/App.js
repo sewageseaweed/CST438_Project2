@@ -15,6 +15,8 @@ function App() {
         <nav className="navbar navbar-expand-lg bg-dark fixed-top p-3">
           <div className="container">
             <Link className="nav-link" to={"Dashboard"}>Dashboard</Link>
+            <Link className="nav-link" to={""}>My WishLists</Link>
+            <Link className="nav-link" to={""}>Other WishLists</Link>
             <Link className="nav-link" to={"Dashboard"}>Login</Link>
             {<Link className="nav-link" to={"register"}>Register</Link>}
 
