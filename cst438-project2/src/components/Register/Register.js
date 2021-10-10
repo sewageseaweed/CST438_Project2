@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch, Redirect, useHistory, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../css/Login.css';
+import '../css/Register.css';
 
 // async function loginUser(credentials) {
 //     return fetch('http://localhost:8080/login', {
@@ -14,11 +14,12 @@ import '../css/Login.css';
 //       .then(data => data.json())
 // }
 
-export default function Login({ setToken }) {
+// export default function Login({ setToken }) {
+export default function Register({ setToken }) {
 
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
-
+  const [reenterpassword, setReenterPassword] = useState();
   // const handleSubmit = async e => {
   //   e.preventDefault();
   //   const token = await loginUser({
@@ -45,24 +46,25 @@ export default function Login({ setToken }) {
     }
   }
   return(
-    <div className="login-wrapper">
+    <div className="register-wrapper">
       <form onSubmit={handleSubmit} className="card mx-auto w-50 p-3 m-3">
-      <h1>Log In</h1>
+        <h1>Register</h1>
         <label className="p-3">
           <input type="text" placeholder="Username" onChange={e => setUserName(e.target.value)}/>
         </label>
         <label className="p-3">
           <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
         </label>
+        <label className="p-3">
+          <input type="password" placeholder="Reenter Password" onChange={e => setReenterPassword(e.target.value)}/>
+        </label>
         <div>
-          <button type="submit" className="btn btn-primary">Login</button>
+          <button type="submit" className="btn btn-primary">Register</button>
         </div>
       </form>
-
+      <div>
+      
+      </div>
     </div>
   )
-}
-
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired
 }
