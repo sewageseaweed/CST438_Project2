@@ -11,6 +11,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Autowired
   private UserRepository repository;
+  //private ItemRepository itemRepo;
 
   public static void main(String[] args){
     SpringApplication.run(AccessingDataMongodbApplication.class, args);
@@ -21,6 +22,8 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
     repository.deleteAll();
 
     repository.save(new User("Clyde", "Password", "ewe@gmail.com"));
+    //repository.save(new User("2", "24", "ewe@gmail.com"));
+    repository.save(new User("Roy", "Passwordy", "roy@gmail.com"));
 
     System.out.println("Users found with finalALL()");
     System.out.println("------------");

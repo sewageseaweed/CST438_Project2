@@ -1,4 +1,6 @@
-com/groupO/project2/UserRepository.class
 com/groupO/project2/Project2Application.class
-com/groupO/project2/AccessingDataMongodbApplication.class
+com/groupO/project2/ReactAndSpringDataRestApplication.class
+com/groupO/project2/UserRepository.class
+com/groupO/project2/Item.class
+com/groupO/project2/UserLoader.class
 com/groupO/project2/User.class
