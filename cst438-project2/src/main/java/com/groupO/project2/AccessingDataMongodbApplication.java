@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
+@EnableMongoRepositories
 public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Autowired
@@ -24,6 +26,8 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
     repository.save(new User("Clyde", "Password", "ewe@gmail.com"));
     //repository.save(new User("2", "24", "ewe@gmail.com"));
     repository.save(new User("Roy", "Passwordy", "roy@gmail.com"));
+    
+    //itemRepo.save(new Item("sdfsafa2131", "amazon.com", "Bezos Cool", "jeffBezos.com"));
 
     System.out.println("Users found with finalALL()");
     System.out.println("------------");
@@ -35,7 +39,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
     System.out.println("Users found with findById(1)");
     System.out.println("------------");
-    System.out.println(repository.findById(1));
+    //System.out.println(repository.findById("1"));
 
     System.out.println();
 
