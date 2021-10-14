@@ -5,12 +5,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import com.groupO.project2.repository.itemRepo.Item;
+import com.groupO.project2.repository.itemRepo.ItemRepository;
+import com.groupO.project2.repository.userRepo.User;
+import com.groupO.project2.repository.userRepo.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @SpringBootApplication
 public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Autowired
   private UserRepository repository;
+  
+  @Autowired
+  private ItemRepository itemRepo;
 
   public static void main(String[] args){
     SpringApplication.run(AccessingDataMongodbApplication.class, args);
@@ -21,6 +33,10 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
     repository.deleteAll();
 
     repository.save(new User("Clyde", "Password", "ewe@gmail.com"));
+    //repository.save(new User("2", "24", "ewe@gmail.com"));
+    repository.save(new User("Roy", "Passwordy", "roy@gmail.com"));
+    
+    itemRepo.save(new Item("sdfsafa2131", "amazon.com", "Bezos Cool", "jeffBezos.com"));
 
     System.out.println("Users found with finalALL()");
     System.out.println("------------");
@@ -32,7 +48,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
     System.out.println("Users found with findById(1)");
     System.out.println("------------");
-    System.out.println(repository.findById(1));
+    //System.out.println(repository.findById("1"));
 
     System.out.println();
 
