@@ -7,13 +7,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import com.groupO.project2.repository.itemRepo.Item;
+import com.groupO.project2.repository.itemRepo.ItemRepository;
+import com.groupO.project2.repository.userRepo.User;
+import com.groupO.project2.repository.userRepo.UserRepository;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @SpringBootApplication
-@EnableMongoRepositories
 public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Autowired
   private UserRepository repository;
-  //private ItemRepository itemRepo;
+  
+  @Autowired
+  private ItemRepository itemRepo;
 
   public static void main(String[] args){
     SpringApplication.run(AccessingDataMongodbApplication.class, args);
@@ -27,7 +36,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
     //repository.save(new User("2", "24", "ewe@gmail.com"));
     repository.save(new User("Roy", "Passwordy", "roy@gmail.com"));
     
-    //itemRepo.save(new Item("sdfsafa2131", "amazon.com", "Bezos Cool", "jeffBezos.com"));
+    itemRepo.save(new Item("sdfsafa2131", "amazon.com", "Bezos Cool", "jeffBezos.com"));
 
     System.out.println("Users found with finalALL()");
     System.out.println("------------");
