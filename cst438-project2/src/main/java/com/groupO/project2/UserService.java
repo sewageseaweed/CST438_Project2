@@ -9,18 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.stereotype.Service;
 
-@RestController
-@RestControllerAdvice
-
-@RequestMapping(path = "/users")
-public class UserController {
+@Service
+public class UserService {
+    private final UserRepository userRepository;
 
     @Autowired
-    private UserService userService;
-
-    @GetMapping(value = "/allUsers")
-    public List<User> getUsers() {
-        return ObjectMapperUtils.mapAll(userService.getUsers(), User.class);
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
+
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public List<User> getUsers() {
+        return userRepository.findAll();
+    }
+
 }

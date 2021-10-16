@@ -35,7 +35,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
     System.out.println("Users found with findById(1)");
     System.out.println("------------");
-    System.out.println(repository.findById(1));
+    // System.out.println(repository.findById(1));
 
     System.out.println();
 
