@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import { BrowserRouter, Route, Switch, Redirect, useHistory, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../css/Login.css';
@@ -18,18 +19,32 @@ export default function Login({ setToken }) {
 
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [user, setUser] = useState();
 
   // const handleSubmit = async e => {
-  //   e.preventDefault();
-  //   const token = await loginUser({
-  //     username,
-  //     password
-  //   });
-  //   setToken(token);
-  // }
+  //   const user = { username, password };
 
+  //   const response = await.axios.post (
+  //     //http login api request here
+  //   );
+
+  //   //Set state
+  //   setUser(response.data);
+  //   //store in localstorage
+  //   localStorage.setItem('user', response.data)
+  // }
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("user");
+  //   if (loggedInUser) {
+  //     const foundUser = JSON.parse(loggedInUser);
+  //     setUser(foundUser);
+  //   }
+  // }, []);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //hardcoded method below vvvvvvvvvvvvvvvvvvvvvv
     let hardcodedCred = {
       username: 'admin',
       password: 'admin'
