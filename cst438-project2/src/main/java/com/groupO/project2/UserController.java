@@ -38,13 +38,13 @@ public class UserController {
     }
 
     @PostMapping(value = "/save")
-    public ResponseEntity<String> saveOrUpdateUser(@RequestBody User user) {
+    public ResponseEntity<?> saveOrUpdateUser(@RequestBody User user) {
         userService.saveOrUpdateUser(ObjectMapperUtils.map(user, User.class));
         return new ResponseEntity("User added successfully", HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/delete/{username}")
-    public ResponseEntity<String> deleteUserByUsername(@PathVariable String username) {
+    public ResponseEntity<?> deleteUserByUsername(@PathVariable String username) {
         userService.deleteUser(userService.findByUserUsername(username).getId());
         return new ResponseEntity("User deleted successfully", HttpStatus.OK);
     }
