@@ -32,4 +32,12 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
+    public Item saveOrUpdateItem(Item item) {
+        return itemRepository.save(item);
+    }
+
+    public void deleteItem(String id) {
+        itemRepository.deleteById(id);
+    }
+
 }
