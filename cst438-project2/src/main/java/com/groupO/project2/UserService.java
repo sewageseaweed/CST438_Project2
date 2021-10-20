@@ -28,8 +28,21 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
+    public User findByUserUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
+    public User saveOrUpdateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public void deleteUser(String id) {
+        userRepository.deleteById(id);
+    }
+
 
 }
