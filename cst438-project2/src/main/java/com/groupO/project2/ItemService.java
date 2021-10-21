@@ -28,6 +28,10 @@ public class ItemService {
         return itemRepository.findByItemLink(link);
     }
 
+    public List<Item> findByUserId(String userId) {
+        return itemRepository.findAllByUserId(userId);
+    }
+
     public List<Item> getItems() {
         return itemRepository.findAll();
     }
