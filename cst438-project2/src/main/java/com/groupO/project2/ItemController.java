@@ -38,6 +38,11 @@ public class ItemController {
         return ObjectMapperUtils.map(itemService.findByItemLink(itemLink), Item.class);
     }
 
+    @GetMapping(value = "/userId/{userId}")
+    public List<Item> getItemsByUserId(@PathVariable("userId") String userId) {
+        return ObjectMapperUtils.mapAll(itemService.findByUserId(userId), Item.class);
+    }
+
     @PostMapping(value = "/save")
     public ResponseEntity<?> saveOrUpdateItem(@RequestBody Item item) {
         itemService.saveOrUpdateItem(ObjectMapperUtils.map(item, Item.class));
