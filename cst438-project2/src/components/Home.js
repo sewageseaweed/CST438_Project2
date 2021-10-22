@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Register from './Register'
 import Login from './Login';
+import Navbar from './Navbar';
+
 
 export default class Home extends Component {
     constructor(props) {
@@ -16,10 +18,15 @@ export default class Home extends Component {
     render() {
         return (
             <div class="mt-5">
-                <h1>Home</h1>
-                <h1>STATUS: {this.props.loggedInStatus}</h1>
-                <Register handleSuccessfulAuth={this.handleSuccessfulAuth}/>
-                <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                <div class="row">
+                    <div class="col">
+                        <Register handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                    </div>
+                    <div class="col">
+                        <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                    </div>
+                </div>
+
             </div>
         );
     }

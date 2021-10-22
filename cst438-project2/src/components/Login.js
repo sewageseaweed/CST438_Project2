@@ -44,8 +44,10 @@ class Login extends Component {
 
     render() {
         return (
-            <div class="register-wrapper">
+            <div class="login-wrapper">
                 <form class="card p-3 m-auto mt-5 w-50" onSubmit={this.onSubmit}>
+                    <div class="text-center"> Login </div>
+
                     <input 
                         class="p-3 m-3"
                         type="text" 
