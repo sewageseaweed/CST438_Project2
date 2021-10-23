@@ -43,5 +43,10 @@ public class ItemService {
     public void deleteItem(String id) {
         itemRepository.deleteById(id);
     }
+    
+    public Item findById(String id) {
+        return itemRepository.findByid(id);
+    }
+
 
 }
