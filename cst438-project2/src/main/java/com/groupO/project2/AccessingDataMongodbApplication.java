@@ -22,7 +22,6 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
   private UserRepository repository;
   
   @Autowired
-  private ItemRepository itemRepo;
 
   public static void main(String[] args){
     SpringApplication.run(AccessingDataMongodbApplication.class, args);
@@ -31,31 +30,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     repository.deleteAll();
-
-    repository.save(new User("Clyde", "Password", "ewe@gmail.com"));
-    //repository.save(new User("2", "24", "ewe@gmail.com"));
-    repository.save(new User("Roy", "Passwordy", "roy@gmail.com"));
-    
-    itemRepo.save(new Item("sdfsafa2131", "amazon.com", "Bezos Cool", "jeffBezos.com"));
-
-    System.out.println("Users found with finalALL()");
-    System.out.println("------------");
-    for(User user : repository.findAll()){
-      System.out.println(user);
-    }
-
-    System.out.println();
-
-    System.out.println("Users found with findById(1)");
-    System.out.println("------------");
-    // System.out.println(repository.findById("1"));
-
-    System.out.println();
-
-    System.out.println("Users found with findByEmail(ewe@gmail.com)");
-    System.out.println("------------");
-    System.out.println(repository.findByEmail("ewe@gmail.com"));
-
-    System.out.println();
+	repository.save(new User("test", "test", "test@gmail.com"));
+	repository.save(new User("admin", "admin", "admin@gmail.com"));
   }
 }

@@ -44,6 +44,16 @@ public class ItemService {
     public void deleteItem(String id) {
         itemRepository.deleteById(id);
     }
+    
+    public Item getById(String id) {
+    	List<Item> items = getItems();
+    	for(Item item: items) {
+    		if (item.getId().equals(id)){
+    			return item;
+    		}
+    	}
+    	return null;
+    }
 
 
 }

@@ -4,7 +4,6 @@ com/groupO/project2/UserService.class
 com/groupO/project2/ItemService.class
 com/groupO/project2/ObjectMapperUtils.class
 com/groupO/project2/repository/userRepo/User.class
-com/groupO/project2/UserLoader.class
 com/groupO/project2/Project2Application.class
 com/groupO/project2/MultipleMongoProperties.class
 com/groupO/project2/ReactAndSpringDataRestApplication.class
