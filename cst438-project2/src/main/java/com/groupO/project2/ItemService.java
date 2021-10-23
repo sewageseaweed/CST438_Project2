@@ -14,6 +14,7 @@ import com.groupO.project2.repository.itemRepo.Item;
 import com.groupO.project2.repository.itemRepo.ItemRepository;
 
 import org.springframework.stereotype.Service;
+import org.bson.types.ObjectId;
 
 @Service
 public class ItemService {
@@ -46,6 +47,16 @@ public class ItemService {
     
     public Item findById(String id) {
         return itemRepository.findByid(id);
+    }
+    
+    public Item findById(ObjectId id) {
+    	List<Item> items = getItems();
+    	for(Item item: items) {
+    		if (item.getId().equals(id)){
+    			return item;
+    		}
+    	}
+        return null;
     }
 
 
