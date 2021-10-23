@@ -13,20 +13,20 @@ class ViewWishlist extends Component {
   }
   componentDidMount() {
       console.log(this.props.user.id);
-      axios.get('items/userId/' + this.props.user.id)
+      axios.get('/items/userId/' + this.props.user.id)
         .then(res => {
             this.setState({wishList: res.data});
             console.log(this.state.wishList); 
         });
   }
 
-  handleDelete(itemLink) {
-    console.log("Item Link:" + itemLink);
-    axios.delete('items/delete/'+itemLink)
+  handleDelete(id) {
+    console.log("Item Link:" + id);
+    axios.delete('/items/delete/item/'+id)
         .then(res=>{
             console.log(res.data);
             //update State to reflect removal
-            axios.get('items/userId/' + this.props.user.id)
+            axios.get('/items/userId/' + this.props.user.id)
             .then(res => {
                 this.setState({wishList: res.data});
             });
@@ -51,9 +51,7 @@ class ViewWishlist extends Component {
                 <h1>{item.itemLink}</h1>
                 <h1>{item.itemDesc}</h1>
                 <h1>{item.itemPic}</h1>
-                <button onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
-                {/* <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button> */}
-
+                <button onClick={() => this.handleDelete(item.id)}>DELETE</button>
             </div>
             ) : <h5>No items added yet</h5>
             }
