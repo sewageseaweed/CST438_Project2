@@ -30,6 +30,9 @@ class ViewWishlist extends Component {
             .then(res => {
                 this.setState({wishList: res.data});
             });
+        })
+        .catch(error=>{
+            console.log("Error: ", error)
         });
   }
   handleEdit(itemLink) {
@@ -48,15 +51,8 @@ class ViewWishlist extends Component {
                 <h1>{item.itemLink}</h1>
                 <h1>{item.itemDesc}</h1>
                 <h1>{item.itemPic}</h1>
-                <div class="row">
-                    <div class="col">
-                        <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button>
-                    </div>
-                    <div class="col">
-                        <button class="btn btn-danger" onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
-                    </div>
-                </div>
-
+                <button onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
+                {/* <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button> */}
 
             </div>
             ) : <h5>No items added yet</h5>
