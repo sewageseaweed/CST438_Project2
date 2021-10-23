@@ -11,7 +11,7 @@ class EditProfile extends Component {
             id: this.props.user.id,
             username: this.props.user.username,
             password: this.props.user.password,
-            email: this.props.user.id, 
+            email: this.props.user.email, 
         }
     }
 
