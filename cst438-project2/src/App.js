@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import Create from './components/Create';
-import Edit from './components/Edit';
+import AddItem from './components/AddItem';
+import EditItem from './components/EditItem';
 import Show from './components/Show';
 import Login from './components/Login';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Register from './components/Register';
-import Navbar from './components/Navbar';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import axios from 'axios';
+import EditProfile from './components/EditProfile';
+
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 
 class App extends Component {
 
@@ -27,16 +26,11 @@ class App extends Component {
       user: data
     })
   }
-  //TODO MAYBE
-  // checkLoginStatus() {
-  //   axios.get("/logged_in", {withCredentials: true}).then()
-  // }
 
   render() {
     return (
       <div class="app">
         <BrowserRouter>
-        <Navbar />
           <Switch>
             <Route 
               exact 
@@ -45,17 +39,41 @@ class App extends Component {
                 <Home {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>
               )}
             />
+
             <Route 
               exact 
               path="/dashboard" 
               render={props => (
-                <Dashboard {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+                <Dashboard {... props} retrieveWishlist={this.retrieveWishlist} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
               )}
             />
-            <Route path='/create' component={Create}/>
+            
+            <Route 
+              exact 
+              path="/addItem" 
+              render={props => (
+                <AddItem {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />
+
+            <Route 
+              exact 
+              path="/editItem" 
+              render={props => (
+                <EditItem {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />
+
+            <Route 
+              exact 
+              path="/editProfile" 
+              render={props => (
+                <EditProfile {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />  
+            
             <Route path='/register' component={Register}/>
             <Route path='/login' component={Login}/>
-            <Route path='/edit/:id' component={Edit}/>
             <Route path='/show/:id' component={Show}/>
           </Switch>
         </BrowserRouter>

@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Navbar from './Navbar'
+import ViewWishlist from './ViewWishlist'
 
-const Dashboard = props => {
-    return (
+export default class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {    
+        return (
         <div>
-            <div class="mt-5">
-                <h1>Dashboard</h1>
-                <h1>STATUS: {props.loggedInStatus}</h1>
-                <h1>Hello: {props.user.username}</h1>
+            <div class> 
+                
+                <Navbar { ... this.props}/>
+                <ViewWishlist { ... this.props} />
 
             </div>
         </div>
-    );
+        );
+    }
+
 }
-export default Dashboard;
