@@ -28,8 +28,12 @@ class EditProfile extends Component {
 
         axios.post('/users/save', {id, username, password, email})
         .then((res) => {
-            console.log(res.data);
-            this.props.history.push("/dashboard");
+            console.log(res);
+            axios.get('/users/username/'+username)
+                .then(res => {
+                    this.props.changeUserState(res.data);
+                    this.props.history.push('/dashboard');
+                })
         })
         .catch(error => {
             console.log("Edit Profile error ", error);

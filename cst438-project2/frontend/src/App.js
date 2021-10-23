@@ -19,10 +19,18 @@ class App extends Component {
       user: {}
     };
     this.handleLogin = this.handleLogin.bind(this);
+    this.changeUserState = this.changeUserState.bind(this);
+
   }
   handleLogin(data) {
     this.setState({
       loggedInStatus: "LOGGED_IN",
+      user: data
+    })
+  }
+
+  changeUserState(data) {
+    this.setState({
       user: data
     })
   }
@@ -68,7 +76,7 @@ class App extends Component {
               exact 
               path="/editProfile" 
               render={props => (
-                <EditProfile {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+                <EditProfile {... props} changeUserState={this.changeUserState} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
               )}
             />  
             
