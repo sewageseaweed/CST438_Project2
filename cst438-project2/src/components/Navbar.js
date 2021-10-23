@@ -20,7 +20,7 @@ class Navbar extends Component {
 
               <div class="col m-auto">
                 <Link class="text-decoration-none p-3 link-secondary" to="/addItem"> Add Item </Link>
-                <Link class="text-decoration-none p-3 link-secondary" to="/addItem"> Edit Profile </Link>
+                <Link class="text-decoration-none p-3 link-secondary" to="/editProfile"> Edit Profile </Link>
 
               </div>
 

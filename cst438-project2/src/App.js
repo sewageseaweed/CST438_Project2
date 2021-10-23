@@ -6,6 +6,8 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Register from './components/Register';
+import EditProfile from './components/EditProfile';
+
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 
 class App extends Component {
@@ -24,10 +26,6 @@ class App extends Component {
       user: data
     })
   }
-  //TODO MAYBE
-  // checkLoginStatus() {
-  //   axios.get("/logged_in", {withCredentials: true}).then()
-  // }
 
   render() {
     return (
@@ -65,6 +63,14 @@ class App extends Component {
                 <EditItem {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
               )}
             />
+
+            <Route 
+              exact 
+              path="/editProfile" 
+              render={props => (
+                <EditProfile {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />  
             
             <Route path='/register' component={Register}/>
             <Route path='/login' component={Login}/>

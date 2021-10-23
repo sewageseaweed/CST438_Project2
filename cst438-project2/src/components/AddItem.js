@@ -42,7 +42,6 @@ export default class AddItem extends Component {
           <div class="register-wrapper">
           <form class="card p-3 m-auto mt-5 w-50" onSubmit={this.onSubmit}>
               <div class="text-center"> Add New Item </div>
-              {this.props.user.id}
               <input 
                   class="p-3 m-3"
                   type="text" 
