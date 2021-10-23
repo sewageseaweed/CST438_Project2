@@ -45,9 +45,9 @@ public class ItemService {
         itemRepository.deleteById(id);
     }
     
-    public Item findById(String id) {
-        return itemRepository.findByid(id);
-    }
+//    public Item findById(String id) {
+//        return itemRepository.findByid(id);
+//    }
     
     public Item findById(ObjectId id) {
     	List<Item> items = getItems();
