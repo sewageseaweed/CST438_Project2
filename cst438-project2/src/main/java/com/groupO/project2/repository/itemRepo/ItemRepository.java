@@ -9,6 +9,6 @@ public interface ItemRepository extends MongoRepository<Item, String> {
 
   public Item findByItemLink(String link);
   public List<Item> findAllByUserId(String userId);
-  public Item findByid(String id);
+//  public Item findByid(String id);
   //public Item findById(String id);
 }
