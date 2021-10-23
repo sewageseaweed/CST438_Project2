@@ -60,7 +60,7 @@ public class ItemController {
     public ResponseEntity<?> deleteItemById(@PathVariable String id) {
     	ObjectId objectid = new ObjectId(id);
         itemService.deleteItem(itemService.findById(objectid).getId());
-        //itemService.deleteItem(id;
+        //itemService.deleteItem(id);
         return new ResponseEntity("Item deleted successfully", HttpStatus.OK);
     }
 
