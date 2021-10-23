@@ -20,7 +20,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Autowired
   private UserRepository repository;
-  
+
   @Autowired
 
   public static void main(String[] args){
@@ -29,7 +29,7 @@ public class AccessingDataMongodbApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    repository.deleteAll();
+    //repository.deleteAll();
 	repository.save(new User("test", "test", "test@gmail.com"));
 	repository.save(new User("admin", "admin", "admin@gmail.com"));
   }
