@@ -20,9 +20,9 @@ class ViewWishlist extends Component {
         });
   }
 
-  handleDelete(itemId) {
-    console.log("Item Link:" + itemId);
-    axios.delete('items/delete/item/'+itemId)
+  handleDelete(itemLink) {
+    console.log("Item Link:" + itemLink);
+    axios.delete('items/delete/'+itemLink)
         .then(res=>{
             console.log(res.data);
             //update State to reflect removal
@@ -51,7 +51,7 @@ class ViewWishlist extends Component {
                 <h1>{item.itemLink}</h1>
                 <h1>{item.itemDesc}</h1>
                 <h1>{item.itemPic}</h1>
-                <button onClick={() => this.handleDelete(item.id)}>DELETE</button>
+                <button onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
                 {/* <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button> */}
 
             </div>
