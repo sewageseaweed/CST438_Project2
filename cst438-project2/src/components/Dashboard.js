@@ -10,14 +10,9 @@ export default class Dashboard extends Component {
     render() {    
         return (
         <div>
-            <div class="mt-5"> 
+            <div class> 
                 
                 <Navbar { ... this.props}/>
-
-
-                <h1>Dashboard</h1>
-                <h1>STATUS: {this.props.loggedInStatus}</h1>
-                <h1>Hello: {this.props.user.username}</h1>
                 <ViewWishlist { ... this.props} />
 
             </div>

@@ -17,7 +17,14 @@ export default class Home extends Component {
     }
     render() {
         return (
-            <div class="mt-5">
+            <div>
+                <nav class="nav navbar-expand-lg bg-dark p-3 text-white">
+                    <div class="row">
+                        <div class="col-1 mr-auto">
+                            <h1>Wishy</h1>
+                        </div>
+                    </div>
+                </nav>
                 <div class="row">
                     <div class="col">
                         <Register handleSuccessfulAuth={this.handleSuccessfulAuth}/>

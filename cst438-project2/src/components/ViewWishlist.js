@@ -38,21 +38,28 @@ class ViewWishlist extends Component {
 
   render() {
     return (
-      <div class="container p-3 m-3">
-          <h1>WISHLIST ITEMS</h1>
-        <div class="wishlist-container">
+      <div class="viewWishlist-wrapper">
+        <div class="container-fluid text-center p-3 m-3">
+            <h1>Your Wishlist</h1>
             {this.state.wishList.length > 0 ? this.state.wishList.map( item =>
-            <div class="card p-3 m-3 w-50">
+            <div class="card p-3 m-3 w-50 mx-auto">
                 <h1>{item.id}</h1>
                 <h1>{item.userId}</h1>
                 <h1>{item.itemLink}</h1>
                 <h1>{item.itemDesc}</h1>
                 <h1>{item.itemPic}</h1>
-                <button onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
-                <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button>
+                <div class="row">
+                    <div class="col">
+                        <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-danger" onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
+                    </div>
+                </div>
+
 
             </div>
-            ) : <h1>No items added yet</h1>
+            ) : <h5>No items added yet</h5>
             }
         </div>
       </div>

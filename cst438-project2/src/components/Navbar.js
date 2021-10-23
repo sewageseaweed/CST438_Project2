@@ -10,11 +10,25 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div class="container">
-        <nav class="nav navbar-expand-lg bg-dark fixed-top p-3 text-white">
-          <h1>WishLists</h1>
-          <h1>STATUS: {this.props.user.username}</h1>
-          <Link to="/addItem"> Add Item To Wishlist </Link>
+      <div>
+        <nav class="nav navbar-expand-lg bg-dark p-3 text-white">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-1 mr-auto">
+                <h1>Wishy</h1>
+              </div>
+
+              <div class="col m-auto">
+                <Link class="text-decoration-none p-3 link-secondary" to="/addItem"> Add Item </Link>
+                <Link class="text-decoration-none p-3 link-secondary" to="/addItem"> Edit Profile </Link>
+
+              </div>
+
+              <div class="col-1 ml-auto">
+                <h4 class="text-secondary">{this.props.user.username}</h4>
+              </div>
+            </div>
+          </div>
         </nav>
       </div>
 
