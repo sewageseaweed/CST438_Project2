@@ -1,4 +1,6 @@
+com/groupO/project2/AccessingDataMongodbApplication.class
 com/groupO/project2/repository/itemRepo/ItemRepository.class
+com/groupO/project2/UserService.class
 com/groupO/project2/ItemService.class
 com/groupO/project2/ObjectMapperUtils.class
 com/groupO/project2/repository/userRepo/User.class
@@ -6,12 +8,18 @@ com/groupO/project2/UserLoader.class
 com/groupO/project2/Project2Application.class
 com/groupO/project2/MultipleMongoProperties.class
 com/groupO/project2/ReactAndSpringDataRestApplication.class
+<<<<<<< HEAD
 com/groupO/project2/repository/userRepo/UserRepository.class
 com/groupO/project2/configurations/NewDb1Config.class
 com/groupO/project2/configurations/NewDb2Config.class
 com/groupO/project2/AccessingDataMongodbApplication.class
 com/groupO/project2/UserService.class
+=======
+>>>>>>> master
 com/groupO/project2/repository/itemRepo/Item.class
+com/groupO/project2/repository/userRepo/UserRepository.class
 com/groupO/project2/configurations/MultipleMongoConfig.class
 com/groupO/project2/ItemController.class
+com/groupO/project2/configurations/NewDb1Config.class
+com/groupO/project2/configurations/NewDb2Config.class
 com/groupO/project2/UserController.class
