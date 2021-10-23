@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.bson.types.ObjectId;
 
 import com.groupO.project2.repository.itemRepo.Item;
 
@@ -57,7 +58,9 @@ public class ItemController {
     
     @DeleteMapping(value = "/delete/item/{id}")
     public ResponseEntity<?> deleteItemById(@PathVariable String id) {
-        itemService.deleteItem(itemService.findById(id).getId());
+    	ObjectId objectid = new ObjectId(id);
+        itemService.deleteItem(itemService.findById(objectid).getId());
+        //itemService.deleteItem(id;
         return new ResponseEntity("Item deleted successfully", HttpStatus.OK);
     }
 
