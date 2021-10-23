@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/roymo/Workshop/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/UserLoader.java
 /home/roymo/Workshop/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/repository/itemRepo/ItemRepository.java
 /home/roymo/Workshop/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/UserService.java
@@ -15,3 +16,21 @@
 /home/roymo/Workshop/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/ReactAndSpringDataRestApplication.java
 /home/roymo/Workshop/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/configurations/MultipleMongoConfig.java
 /home/roymo/Workshop/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/Project2Application.java
+=======
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/repository/userRepo/User.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/ItemService.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/configurations/NewDb1Config.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/configurations/NewDb2Config.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/ReactAndSpringDataRestApplication.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/repository/itemRepo/Item.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/AccessingDataMongodbApplication.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/UserService.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/UserController.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/Project2Application.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/repository/userRepo/UserRepository.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/configurations/MultipleMongoConfig.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/ItemController.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/MultipleMongoProperties.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/repository/itemRepo/ItemRepository.java
+/home/clyde/Projects/CST438_Project2/cst438-project2/src/main/java/com/groupO/project2/ObjectMapperUtils.java
+>>>>>>> master

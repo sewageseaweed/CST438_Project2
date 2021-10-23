@@ -1,6 +1,10 @@
 com/groupO/project2/ObjectMapperUtils.class
 com/groupO/project2/repository/userRepo/User.class
+<<<<<<< HEAD
 com/groupO/project2/UserLoader.class
+=======
+com/groupO/project2/Project2Application.class
+>>>>>>> master
 com/groupO/project2/MultipleMongoProperties.class
 com/groupO/project2/configurations/NewDb1Config.class
 com/groupO/project2/configurations/NewDb2Config.class
