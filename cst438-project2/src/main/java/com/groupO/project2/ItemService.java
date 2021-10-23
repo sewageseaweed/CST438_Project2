@@ -24,8 +24,8 @@ public class ItemService {
         this.itemRepository = itemRepository;
     }
 
-    public Item findByItemLink(String link) {
-        return itemRepository.findByItemLink(link);
+    public Item findByItemLink(String userId) {
+        return itemRepository.findByUserId(userId);
     }
 
     public List<Item> getItems() {

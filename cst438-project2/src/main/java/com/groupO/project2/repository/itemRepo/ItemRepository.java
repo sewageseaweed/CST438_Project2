@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 public interface ItemRepository extends MongoRepository<Item, String> {
 
-  public Item findByItemLink(String link);
+  public Item findByUserId(String userId);
   //public Item findById(String id);
 }
