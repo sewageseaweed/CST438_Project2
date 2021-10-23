@@ -14,7 +14,7 @@ class Navbar extends Component {
         <nav class="nav navbar-expand-lg bg-dark fixed-top p-3 text-white">
           <h1>WishLists</h1>
           <h1>STATUS: {this.props.user.username}</h1>
-          <Link to="/Item"> Add Item To Wishlist </Link>
+          <Link to="/addItem"> Add Item To Wishlist </Link>
         </nav>
       </div>
 

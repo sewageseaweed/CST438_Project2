@@ -1,0 +1,63 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+class ViewWishlist extends Component {
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+    this.state = {
+        wishList: []
+    }
+  }
+  componentDidMount() {
+      console.log(this.props.user.id);
+      axios.get('items/userId/' + this.props.user.id)
+        .then(res => {
+            this.setState({wishList: res.data});
+            console.log(this.state.wishList); 
+        });
+  }
+
+  handleDelete(itemLink) {
+    console.log("Item Link:" + itemLink);
+    axios.delete('items/delete/'+itemLink)
+        .then(res=>{
+            console.log(res.data);
+            //update State to reflect removal
+            axios.get('items/userId/' + this.props.user.id)
+            .then(res => {
+                this.setState({wishList: res.data});
+            });
+        });
+  }
+  handleEdit(itemLink) {
+      this.props.history.push('/editItem', {data: itemLink})
+  }
+
+  render() {
+    return (
+      <div class="container p-3 m-3">
+          <h1>WISHLIST ITEMS</h1>
+        <div class="wishlist-container">
+            {this.state.wishList.length > 0 ? this.state.wishList.map( item =>
+            <div class="card p-3 m-3 w-50">
+                <h1>{item.id}</h1>
+                <h1>{item.userId}</h1>
+                <h1>{item.itemLink}</h1>
+                <h1>{item.itemDesc}</h1>
+                <h1>{item.itemPic}</h1>
+                <button onClick={() => this.handleDelete(item.itemLink)}>DELETE</button>
+                <button onClick={() => this.handleEdit(item.itemLink)}>EDIT</button>
+
+            </div>
+            ) : <h1>No items added yet</h1>
+            }
+        </div>
+      </div>
+
+    );
+  }
+}
+export default ViewWishlist;
