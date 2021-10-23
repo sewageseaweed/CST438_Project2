@@ -55,7 +55,7 @@ public class ItemController {
         return new ResponseEntity("Item deleted successfully", HttpStatus.OK);
     }
     
-    @DeleteMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "/delete/item/{id}")
     public ResponseEntity<?> deleteItemById(@PathVariable String id) {
         itemService.deleteItem(itemService.findById(id).getId());
         return new ResponseEntity("Item deleted successfully", HttpStatus.OK);
