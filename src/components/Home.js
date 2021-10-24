@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Register from './Register'
 import Login from './Login';
+import './css/Home.css';
 
 export default class Home extends Component {
     constructor(props) {
@@ -15,24 +16,24 @@ export default class Home extends Component {
     }
     render() {
         return (
-            <div>
-                <nav class="nav navbar-expand-lg bg-dark p-3 text-white">
-                    <div class="row">
-                        <div class="col-1 mr-auto">
-                            <h1>Wishy</h1>
+                <div class="jumbotron jumbotron-fluid bg-dark text-center text-white" id="intro">
+                    <div class="container-fluid">
+                        <div class="row mx-auto">
+                            <h1 class="mt-5">Wishy</h1>
+                        </div>
+                        <div class="row justify-content-center">
+
+                            <div class="col p-3 m-3">
+                                <Register handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                            </div>
+                            <div class="col p-3 m-3">
+                                <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                            </div>
                         </div>
                     </div>
-                </nav>
-                <div class="row">
-                    <div class="col">
-                        <Register handleSuccessfulAuth={this.handleSuccessfulAuth}/>
-                    </div>
-                    <div class="col">
-                        <Login handleSuccessfulAuth={this.handleSuccessfulAuth}/>
-                    </div>
+
                 </div>
 
-            </div>
         );
     }
 }

@@ -43,7 +43,7 @@ class Login extends Component {
         return (
             <div class="login-wrapper">
                 <form class="card p-3 m-auto mt-5 w-50" onSubmit={this.onSubmit}>
-                    <div class="text-center"> Login </div>
+                    <div class="text-center text-dark"> Login </div>
 
                     <input 
                         class="p-3 m-3"

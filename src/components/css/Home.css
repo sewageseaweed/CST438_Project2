@@ -1,0 +1,11 @@
+#intro {
+    background: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), 
+    url("https://i.pinimg.com/originals/21/39/e0/2139e0405ae392726363954e18afa342.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+.jumbotron {
+    height: 100vh;
+}
