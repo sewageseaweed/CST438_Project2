@@ -56,7 +56,7 @@ class Register extends Component {
         return (
             <div class="register-wrapper">
                 <form class="card p-3 m-auto mt-5 w-50" onSubmit={this.onSubmit}>
-                    <div class="text-center"> Register </div>
+                    <div class="text-center text-dark"> Register </div>
 
                     <input 
                         class="p-3 m-3"

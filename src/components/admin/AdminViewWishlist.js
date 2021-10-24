@@ -63,7 +63,8 @@ class AdminViewWishlist extends Component {
             {this.state.users.filter(filteredUser => filteredUser.username !== "admin").map( user => 
                 <div class="m-3">
                     <div class="card p-3 w-50 mx-auto">
-                        <h3>User: {user.username} ID: {user.id}</h3> 
+                        <h3>User: {user.username} </h3> 
+                        <h3>ID: {user.id}</h3>
                         <button class="btn btn-secondary p-3 m-3" onClick={() => this.handleProfileEdit(user)}>EDIT PROFILE</button>
                         <button class="btn btn-danger p-3 m-3" onClick={() => this.handleProfileDelete(user.username)}>DELETE</button>
 
