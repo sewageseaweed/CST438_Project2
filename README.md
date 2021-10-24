@@ -12,3 +12,7 @@ Julio Lopez - juliolopez2
 
 ### Database ERD
 ![alt text](https://drive.google.com/uc?export=view&id=1y7FtHX2NGQpgwtb2zFEhPv5SsyE_F5yM)
+
+
+### Video
+[![Video]](https://youtu.be/T9kAJJj-ifI)
