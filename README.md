@@ -6,6 +6,9 @@ Julio Lopez - juliolopez2
 
 ---
 
+### Video
+![Video](https://youtu.be/T9kAJJj-ifI)
+
 ### Website Mockup
 ![alt text](https://drive.google.com/uc?export=view&id=1h4B26YEjS3DZEXE7YrTiw_UMo02UMlqv)
 
@@ -14,5 +17,3 @@ Julio Lopez - juliolopez2
 ![alt text](https://drive.google.com/uc?export=view&id=1y7FtHX2NGQpgwtb2zFEhPv5SsyE_F5yM)
 
 
-### Video
-[![Video]](https://youtu.be/T9kAJJj-ifI)
