@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class ViewWishlist extends Component {
@@ -49,9 +47,6 @@ class ViewWishlist extends Component {
               <div class="card-body">
                 <h5>{item.itemDesc}</h5>
                 <a class="text-decoration-none link-primary p-3" href={item.itemLink} target_="_blank">Link to Item</a>
-                <h1>IDS: </h1>
-                <h3>itemId: {item.id}</h3>
-                <h3>userId: {item.userId}</h3>
               </div>
               <div class="row">
                 <div class="col">
