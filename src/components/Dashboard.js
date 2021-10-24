@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar'
 import ViewWishlist from './ViewWishlist'
+import AdminViewWishlist from './admin/AdminViewWishlist'
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -10,10 +11,12 @@ export default class Dashboard extends Component {
     render() {    
         return (
         <div>
-            <div class> 
+            <div> 
                 
                 <Navbar { ... this.props}/>
-                <ViewWishlist { ... this.props} />
+                {this.props.user.username === "admin" ?
+                <AdminViewWishlist { ... this.props} /> : <ViewWishlist { ... this.props} />
+                }
 
             </div>
         </div>

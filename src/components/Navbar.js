@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 class Navbar extends Component {
   constructor(props) {
@@ -19,13 +17,23 @@ class Navbar extends Component {
               </div>
 
               <div class="col m-auto">
-                <Link class="text-decoration-none p-3 link-secondary" to="/addItem"> Add Item </Link>
-                <Link class="text-decoration-none p-3 link-secondary" to="/editProfile"> Edit Profile </Link>
+                {this.props.user.username === "admin" ? 
+                <Fragment>
+                  <Link class="text-decoration-none p-3 link-secondary" to="/adminAddItem"> Add Item </Link>
+                  <Link class="text-decoration-none p-3 link-secondary" to="/adminAddProfile"> Add Profile </Link>
+                </Fragment> :
+                <Fragment>
+                  <Link class="text-decoration-none p-3 link-secondary" to="/addItem"> Add Item </Link>
+                  <Link class="text-decoration-none p-3 link-secondary" to="/editProfile"> Profile </Link>
+                </Fragment>
+                }
+
+                <a class="text-decoration-none p-3 link-secondary" href="/"> Logout </a>
 
               </div>
 
-              <div class="col-1 ml-auto">
-                <h4 class="text-secondary">{this.props.user.username}</h4>
+              <div class="col-3 ml-auto d-flex align-items-center">
+                <Link class="text-decoration-none p-3 link-secondary" to="/editProfile"> Logged in as: {this.props.user.username} </Link>
               </div>
             </div>
           </div>

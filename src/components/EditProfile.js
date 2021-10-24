@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-
 class EditProfile extends Component {
 
     constructor(props) {
@@ -40,11 +37,19 @@ class EditProfile extends Component {
         });
     }
 
+    handleDelete = () => {
+        axios.delete('/users/delete/'+this.props.user.username)
+            .then(res => {
+                console.log(res);
+                this.props.history.push("/");
+            })
+    }
+
     render() {
         return (
             <div class="editProfile-wrapper">
                 <form class="card p-3 m-auto mt-5 w-50" onSubmit={this.onSubmit}>
-                    <div class="text-center"> Register </div>
+                    <div class="text-center"> Edit Profile </div>
 
                     <input 
                         class="p-3 m-3"
@@ -75,6 +80,9 @@ class EditProfile extends Component {
                     />
                     <button class="btn btn-primary w-25 m-auto p-3 m-3" type="submit">Save Changes</button>
                 </form>
+                <div class="d-flex justify-content-center card p-3 m-auto mt-5 w-50">
+                    <button class="btn btn-danger w-25 m-auto p-3 m-3 text-center" onClick={this.handleDelete}>Delete Account</button>
+                </div>
             </div>
         )
     }

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import AddItem from './components/AddItem';
 import EditItem from './components/EditItem';
-import Show from './components/Show';
 import Login from './components/Login';
 import Home from './components/Home';
 import Dashboard from './components/Dashboard';
 import Register from './components/Register';
 import EditProfile from './components/EditProfile';
+import AdminAddItem from './components/admin/AdminAddItem'
+import AdminEditItem from './components/admin/AdminEditItem'
+import AdminAddProfile from './components/admin/AdminAddProfile'
+import AdminEditProfile from './components/admin/AdminEditProfile'
 
 import { BrowserRouter, Route, Switch} from "react-router-dom";
 
@@ -79,10 +82,41 @@ class App extends Component {
                 <EditProfile {... props} changeUserState={this.changeUserState} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
               )}
             />  
+
+            <Route 
+              exact 
+              path="/adminAddItem" 
+              render={props => (
+                <AdminAddItem {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />  
+
+            <Route 
+              exact 
+              path="/adminEditItem" 
+              render={props => (
+                <AdminEditItem {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />  
+
+            <Route 
+              exact 
+              path="/adminEditProfile" 
+              render={props => (
+                <AdminEditProfile {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />  
+            
+            <Route 
+              exact 
+              path="/adminAddProfile" 
+              render={props => (
+                <AdminAddProfile {... props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+              )}
+            />  
             
             <Route path='/register' component={Register}/>
             <Route path='/login' component={Login}/>
-            <Route path='/show/:id' component={Show}/>
           </Switch>
         </BrowserRouter>
       </div>
